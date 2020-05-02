@@ -10,10 +10,15 @@
     </h:head>
     <h:body>
 
-        <h1>#{testView.testString}</h1>
-        <h:form id="frmTest">
-            
-        </h:form>
+        <h1>Folder tree example</h1>
+            <p:tree value="#{folderBean.treeNode}" var="node"
+                    dynamic="true"
+                    >
+                 <p:treeNode>
+                     <h:outputText value="#{node.name}" />
+                 </p:treeNode>
+                 <p:ajax event="select" listener="#{folderBean.onNodeSelect}" />
+             </p:tree>
 
     </h:body>
 </html>
